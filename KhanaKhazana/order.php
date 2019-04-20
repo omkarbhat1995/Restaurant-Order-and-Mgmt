@@ -444,7 +444,7 @@ input[type=number] {
 				
 				if($md4>0){$set=300;
 					$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$md4','set')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}
-					$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];			
+					$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];			
 					$query2="SELECT Price FROM Food WHERE `F_id`=:foid";$query_params = array( ':foid' => $set);$stmt3=$db->prepare($query2);$result3=$stmt3->execute($query_params);$row3=$stmt3->fetch();$price=$row3['Price'];
 					$query3="SELECT Quantity, Total_amount FROM Food_order WHERE O_id=$id";$stmt4=$db->prepare($query3);$result4=$stmt4->execute();$row4=$stmt4->fetch();$tot=$row4['Total_amount'];$tot=$tot+($price*$des3q);$quant=$row4['Quantity']+$md4;
 					$fo_up="UPDATE `Food_order` SET `Quantity`=$quant, `Total_amount`=$tot WHERE `O_id`=$id";if (!mysqli_query($link,$fo_up)){die('Error'.mysqli_error($link));}
