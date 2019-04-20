@@ -72,14 +72,18 @@ nav.black .list ul li{ padding-top: 30px; }
 .box-4{ margin-top: 35px; padding: 80px 30px; color: #fff; background: url(../img/paneer-bhurji-turmeric-cottage-cheese-scramble.jpg); background-size: cover; transition: 0.5s; }
 .box-5{ margin-top: 35px; padding: 80px 30px; color: #fff; background: url(../img/murg_handi.jpeg); background-size: cover; transition: 0.5s; }
 .box-6{ margin-top: 35px; padding: 80px 30px; color: #fff; background: url(../img/puri_sabzi.jpeg); background-size: cover; transition: 0.5s; }
-.box-1 .box-1-text, .box-2 .box-2-text, .box-3 .box-3-text, .box-4 .box-4-text, .box-5 .box-5-text, .box-6 .box-6-text{ opacity: 0; transition: 0.5s; }
+.box-7{ margin-top: 35px; padding: 80px 30px; color: #fff; background: url(../img/tandoori_roti.jpeg); background-size: cover; transition: 0.5s; }
+.box-8{ margin-top: 35px; padding: 80px 30px; color: #fff; background: url(../img/jeera_rice.jpeg); background-size: cover; transition: 0.5s; }
+.box-1 .box-1-text, .box-2 .box-2-text, .box-3 .box-3-text, .box-4 .box-4-text, .box-5 .box-5-text, .box-6 .box-6-text, .box-7 .box-7-text, .box-8 .box-8-text{ opacity: 0; transition: 0.5s; }
 .box-1:hover{ cursor: pointer; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../img/Grilled-Chicken-Kabobs.jpg) 50%; }
 .box-2:hover{ cursor: pointer; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../img/mutton_biryani.jpeg) 50%; }
 .box-3:hover{ cursor: pointer; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../img/Rogani_pomfret.jpeg) 50%; }
 .box-4:hover{ cursor: pointer; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../img/paneer-bhurji-turmeric-cottage-cheese-scramble.jpg) 50%; }
 .box-5:hover{ cursor: pointer; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../img/murg_handi.jpeg) 50%; }
 .box-6:hover{ cursor: pointer; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../img/puri_sabzi.jpeg) 50%; }
-.box-1:hover > .box-1-text, .box-2:hover > .box-2-text, .box-3:hover > .box-3-text, .box-4:hover > .box-4-text, .box-5:hover > .box-5-text, .box-6:hover > .box-6-text{ opacity: 1; }
+.box-7:hover{ cursor: pointer; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../img/tandoori_roti.jpeg) 50%; }
+.box-8 :hover{ cursor: pointer; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../img/jeera_rice.jpeg) 50%; }
+.box-1:hover > .box-1-text, .box-2:hover > .box-2-text, .box-3:hover > .box-3-text, .box-4:hover > .box-4-text, .box-5:hover > .box-5-text, .box-6:hover > .box-6-text, .box-7:hover > .box-7-text, .box-8:hover > .box-8-text{ opacity: 1; }
 
 .coffee-top{ padding-top: 60px; }	
 
