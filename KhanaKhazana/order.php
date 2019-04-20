@@ -76,7 +76,7 @@ input[type=number] {
 									<h3>Tomato Soup</h3>
 									<p>
 										Tomatos, onion, carrot, celery, olive oil, tomato puree, sugar, vegetable soup
-									</p>
+									</p><input type="number" name="so1" value="0"/>
 								</div>
 							</div>
 							<div class="col-md-5 mx-auto soup-2 wow animated fadeInUp" style="animation-delay: 0.3s;">
@@ -85,7 +85,7 @@ input[type=number] {
 									<h3>Mushroom Soup</h3>
 									<p>
 										Mushrooms, olive oil, garlic, onion, sea salt, black pepper, persley, cheese
-									</p>
+									</p><input type="number" name="so2" value="0"/>
 								</div>
 							</div>
 						</div>
@@ -100,7 +100,7 @@ input[type=number] {
 									<h3>Cracking cobb salad</h3>
 									<p>
 										Chicken thighs, pepper, olive oil, salt, pancetta, avocado, tomato, cheese, buttermilk
-									</p>
+									</p><input type="number" name="sa1" value="0"/>
 								</div>
 							</div>
 							<div class="col-md-5 mx-auto salad-2 wow animated fadeInUp" style="animation-delay: 0.9s;">
@@ -109,7 +109,7 @@ input[type=number] {
 									<h3>Waldorf Salad</h3>
 									<p>
 										Grapes, lemon, olive oil, sea salt, black pepper, walnuts, yoghurt, celery	
-									</p>
+									</p><input type="number" name="sa2" value="0"/>
 								</div>
 							</div>
 						</div>
@@ -134,28 +134,23 @@ input[type=number] {
 					</div>
 					<div class="col-md-4 mx-auto box-2 wow animated fadeInUp" style="animation-delay: 0.3s;">
 						<div class="box-2-text">
-							<h4>$ 23.50</h4>
-							<h3>Barbaque Beef</h3>
-							<p>
-								Short ribs, olive oil, caraway seeds, yoghurt, carrots, onions, white cabbage
-							</p><input type="number" name="md2" value="0"/>
+							<h4>$ 18.50</h4>
+							<h3>Mutton Biryani	</h3>
+							<p>Long-grained rice (like basmati) flavored with exotic spices, such as saffron, is layered with lamb and a thick gravy	</p><input type="number" name="md2" value="0"/>
 						</div>
 					</div>
 					<div class="col-md-4 mx-auto box-3 wow animated fadeInUp" style="animation-delay: 0.6s;">
 						<div class="box-3-text">
-							<h4>$ 22.80</h4>
-							<h3>Southern Fried Chicken</h3>
-							<p>
-								Chicken thighs, chicken drumsticks, potatoes, ayenne pepper
-							</p><input type="number" name="md3" value="0"/>
+							<h4>$ 12.25</h4>
+							<h3>Rogani Pomfret</h3>
+							<p>Pomfret Fish Covered and Fried with Indian Marinated Herbs 	</p><input type="number" name="md3" value="0"/>
 						</div>
 					</div>
 					<div class="col-md-4 mx-auto box-4 wow animated fadeInUp">
 						<div class="box-4-text">
 							<h4>$ 14.50</h4>
 							<h3>Paneer Bhurji	</h3>
-							<p>
-crumbled paneer simmered in spicy tomato gravy								</p><input type="number" name="md4" value="0"/>
+							<p>crumbled paneer simmered in spicy tomato gravy		</p><input type="number" name="md4" value="0"/>
 						</div>
 					</div>
 					<div class="col-md-4 mx-auto box-5 wow animated fadeInUp" style="animation-delay: 0.3s;">
@@ -169,8 +164,7 @@ crumbled paneer simmered in spicy tomato gravy								</p><input type="number" n
 						<div class="box-2-text">
 							<h4>$ 9.50</h4>
 							<h3>Puri Sabzi</h3>
-							<p>
-deep-fried rounds of flour and aloo (potato) bhaji, a spiced potato dish which may be dry or curried							</p>    <input type="number" name="md6" value="0"/>
+							<p>deep-fried rounds of flour and aloo (potato) bhaji, a spiced potato dish which may be dry or curried	</p>    <input type="number" name="md6" value="0"/>
 						</div>
 					</div>
 				</div>
@@ -354,9 +348,17 @@ deep-fried rounds of flour and aloo (potato) bhaji, a spiced potato dish which m
 				if($cof1q>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$cof1q','200')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
 				if($cof2q>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$cof2q','201')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
 				if($cof3q>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$cof3q','215')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
-				#if($md1>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$md1','200')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
-				#if($md2>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$md2','200')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
-
+				if($md1>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$md1','314')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
+				if($md2>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$md2','313')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
+				if($md3>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$md3','319')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
+				if($md4>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$md4','300')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
+				if($md5>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$md5','304')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
+				if($md6>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$md6','317')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
+				if($sa1>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$sa1','115')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
+				if($sa2>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$sa2','116')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
+				if($so1>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$so1','101')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
+				if($so2>0){$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$so2','102')";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}$itmax="SELECT max(Item_ID) FROM Item";$stmt2= $db->prepare($itmax);$result2=$stmt2->execute();$row2=$stmt2->fetch();$itid=$row2['max(Item_ID)'];$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}}
+				
 			#if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}
 			// $itmax="SELECT max(Item_ID) FROM Item";
 			// $stmt2= $db->prepare($itmax);
@@ -364,7 +366,7 @@ deep-fried rounds of flour and aloo (potato) bhaji, a spiced potato dish which m
 			// $row2=$stmt2->fetch();
 			// $itid=$row2['max(Item_ID)'];
 			// echo($id);
-			echo($itid);
+			//echo($itid);
 			#$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}
 			
 
