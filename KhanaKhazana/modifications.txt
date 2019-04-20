@@ -1,0 +1,11 @@
+<?php
+// We have not connected to MySQL
+
+$lastname  = "O'Reilly";
+$_lastname = mysql_real_escape_string($lastname);					<-----imp
+
+$query = "SELECT * FROM actors WHERE last_name = '$_lastname'";
+
+var_dump($_lastname);
+var_dump($query);
+?>
