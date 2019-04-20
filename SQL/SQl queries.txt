@@ -1,0 +1,621 @@
+-- phpMyAdmin SQL Dump
+-- version 3.2.0
+-- http://www.phpmyadmin.net
+--
+-- Host: mysql.cs.virginia.edu:3306
+-- Generation Time: Apr 20, 2019 at 07:56 AM
+-- Server version: 5.5.60
+-- PHP Version: 5.4.16
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `og7ut_khana_khazana`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Bill`
+--
+
+CREATE TABLE IF NOT EXISTS `Bill` (
+  `Bill_ID` int(10) NOT NULL AUTO_INCREMENT,
+  `Pay_method` char(10) NOT NULL,
+  `Bill_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `O_id` int(10) NOT NULL,
+  PRIMARY KEY (`Bill_ID`),
+  KEY `O_id` (`O_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=106 ;
+
+--
+-- Dumping data for table `Bill`
+--
+
+INSERT INTO `Bill` (`Bill_ID`, `Pay_method`, `Bill_date`, `O_id`) VALUES
+(102, 'Visa', '2019-03-26 12:41:23', 1),
+(103, 'mastercard', '2019-03-26 15:25:26', 2),
+(104, 'american e', '2019-03-26 15:25:26', 9);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Customer`
+--
+
+CREATE TABLE IF NOT EXISTS `Customer` (
+  `Cust_id` int(15) NOT NULL AUTO_INCREMENT,
+  `F_Name` varchar(50) DEFAULT NULL,
+  `L_Name` varchar(50) DEFAULT NULL,
+  `Contact_No` bigint(10) DEFAULT NULL,
+  `Email_id` varchar(50) NOT NULL,
+  `Street_No` varchar(50) DEFAULT NULL,
+  `Street_Address` varchar(50) DEFAULT NULL,
+  `City` varchar(20) DEFAULT NULL,
+  `State` varchar(20) DEFAULT NULL,
+  `Country` varchar(20) DEFAULT NULL,
+  `ZIP` int(5) DEFAULT NULL,
+  `Password` varchar(100) NOT NULL,
+  PRIMARY KEY (`Cust_id`),
+  UNIQUE KEY `Email_id` (`Email_id`),
+  UNIQUE KEY `Contact_No` (`Contact_No`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10025 ;
+
+--
+-- Dumping data for table `Customer`
+--
+
+INSERT INTO `Customer` (`Cust_id`, `F_Name`, `L_Name`, `Contact_No`, `Email_id`, `Street_No`, `Street_Address`, `City`, `State`, `Country`, `ZIP`, `Password`) VALUES
+(10011, 'Omkar', 'Bhat', 4343289309, 'omkarbhat1995@gmail.com', '324 Peyton Court', 'Apartment 5', 'Charlottesville', 'VA', 'United States', 22903, 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f'),
+(10013, 'Jyoti', 'Kumari', 975743032, 'jk@gmail.com', 'Shirgaon', 'Marathon Society', 'Badalapur', 'WY', 'United States', 87985, 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f'),
+(10017, 'Oindrila', 'Ghosh', 7873736236, 'og@yahoo.com', 'Park-End Apartment', 'River-End Road', 'Jyotipur', 'AL', 'United States', 748159, 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f'),
+(10018, 'J', 'K', 4326583284, 'jd@gmail.com', '2', 'svj', 'sdjfl', 'vfhio', 'US', 34567, 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'),
+(10019, 'sanat', 'kondhol', 4345678989, 'ssjk@gmail.com', '56', 'peyton court', 'Charlottesville', 'VA', 'United States', 22903, 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f'),
+(10020, 'Joey', 'Blue', 4005678909, 'jb@gmail.com', '676', 'farrish circle', 'Charlottesville', 'VA', 'United States', 22903, 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f'),
+(10022, 'Ojas', 'Bhat', 9527886181, 'bhatojas3@gmail.com', '535, Shaniwar Peth,', ' Bajirao Road', 'Charlottesville', 'VA', 'United States', 22903, 'e23c9d920c3cc58becb9540027754506eb209e88c5271efab2d6d2cab77f76a8'),
+(10024, '', '', 0, '', '', '', '', '', '', 0, 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Employee`
+--
+
+CREATE TABLE IF NOT EXISTS `Employee` (
+  `Emp_id` int(10) NOT NULL AUTO_INCREMENT,
+  `Emp_Name` varchar(50) NOT NULL,
+  `Type` varchar(20) NOT NULL,
+  `Contact_No` bigint(10) NOT NULL,
+  `Email_id` varchar(50) NOT NULL,
+  `Street_No` varchar(50) NOT NULL,
+  `Street_Address` varchar(50) NOT NULL,
+  `City` varchar(20) NOT NULL,
+  `State` varchar(20) NOT NULL,
+  `Country` varchar(20) NOT NULL,
+  `ZIP` int(5) NOT NULL,
+  `Password` varchar(100) NOT NULL,
+  PRIMARY KEY (`Emp_id`),
+  UNIQUE KEY `Contact_No` (`Contact_No`,`Email_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100007 ;
+
+--
+-- Dumping data for table `Employee`
+--
+
+INSERT INTO `Employee` (`Emp_id`, `Emp_Name`, `Type`, `Contact_No`, `Email_id`, `Street_No`, `Street_Address`, `City`, `State`, `Country`, `ZIP`, `Password`) VALUES
+(100001, 'Kim Jack', 'Waiter', 4343289789, 'kim@gmail.com', '430', 'farrish', 'Charlottesville', 'VA', 'United States', 22903, 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f'),
+(100002, 'Joe Band', 'Chef', 4343289709, 'joe@gmail.com', '130', 'farrish', 'Charlottesville', 'VA', 'United States', 22903, 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f'),
+(100003, 'Rihanna Wane', 'Manager', 4348289709, 'wane@gmail.com', '730', 'peyton', 'Charlottesville', 'VA', 'United States', 22903, 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f'),
+(100004, 'Jon Snow', 'Cashier', 4343089709, 'jonsnow@gmail.com', '230', 'farrish', 'Charlottesville', 'VA', 'United States', 22903, 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f'),
+(100005, 'Gordon Ramsay', 'Chef', 4343189709, 'gordon@gmail.com', '430', 'Park avenue', 'charlottesville', 'VA', 'United States', 22903, 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f'),
+(100006, 'Vikas khanna', 'Chef', 4343889709, 'vikas@gmail.com', '400', 'Lincoln avenue', 'charlottesville', 'VA', 'United States', 22903, 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Food`
+--
+
+CREATE TABLE IF NOT EXISTS `Food` (
+  `F_id` int(5) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(50) NOT NULL,
+  `Description` varchar(150) NOT NULL,
+  `Price` float NOT NULL,
+  `Spice_lvl` varchar(10) NOT NULL,
+  `Cuisine` varchar(10) NOT NULL,
+  `Course` varchar(10) NOT NULL,
+  PRIMARY KEY (`F_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=329 ;
+
+--
+-- Dumping data for table `Food`
+--
+
+INSERT INTO `Food` (`F_id`, `Name`, `Description`, `Price`, `Spice_lvl`, `Cuisine`, `Course`) VALUES
+(101, 'Tomato Soup', 'Tomatos, onion, carrot, celery, olive oil, tomato puree, sugar, vegetable soup', 10, 'low', 'General', 'Soup'),
+(102, 'Mushroom Soup', 'Mushrooms, olive oil, garlic, onion, sea salt, black pepper, persley, cheese', 15, 'low', 'General', 'Soup'),
+(115, 'Cracking cobb salad', 'Chicken thighs, pepper, olive oil, salt, pancetta, avocado, tomato, cheese, buttermilk', 13, 'low', 'American', 'Appetizers'),
+(116, 'Waldorf Salad', 'Grapes, lemon, olive oil, sea salt, black pepper, walnuts, yoghurt, celery', 12.7, 'low', 'American', 'Appetizers'),
+(132, 'Bread', 'Soft and fresh out of oven', 10, 'low', 'general', 'main cours'),
+(200, 'Cappuccino', 'Espresso-based coffee drink prepared with steamed milk foam', 5.89, 'none', 'Italian', 'Beverage'),
+(201, 'Affogato', 'A scoop of vanilla gelato drowned with a shot of hot espresso', 11.5, 'None', 'Italian', 'Dessert'),
+(215, 'Coffee', 'plain coffee', 5.84, 'None', 'General', 'Beverage'),
+(220, 'Aloo Gobi(Dry)', 'Potatoe and Cauliflower saute with selected spices', 12.25, 'Medium', 'North Indi', 'Main Cours'),
+(221, 'Dhaba veg', 'Mixed vegetable in indian spices', 13.5, 'High', 'North Indi', 'Main Cours'),
+(240, 'Murgh Badami Shorba', 'chicken soup, mildly spiced and served with crunched almonds', 9.99, 'low', 'North Indi', 'Starter'),
+(241, 'Paneer kabab', 'Fresh Indian cheese in a butter tomato gravy', 9.99, 'low', 'North Indi', 'Starter'),
+(300, 'Paneer Bhurji', 'crumbled paneer simmered in spicy tomato gravy', 14.5, 'High', 'North Indi', 'Main Cours'),
+(301, 'Paneer Dopiyaza', 'a rich and tasty mughlai dish of soft succulent cottage cheese and plenty of onions in a creamy gravy', 15, 'Low', 'North Indi', 'Main Cours'),
+(304, 'Murg handi', 'chicken cooked in handi with whole garam masala', 14.5, 'Medium', 'North Indi', 'Main Cours'),
+(305, 'Murg Lahori', 'chicken cooked with all glory of punjabi sindh flavour', 14.5, 'High', 'North Indi', 'Main Cours'),
+(306, 'Bhetki Paturi', 'The bhetki fish pieces are marinated in a spiced mustard paste, wrapped in banana leaf individually and then slow cooked till tender', 16, 'High', 'Bengali', 'Main Cours'),
+(307, 'Mutton Kosha', 'Bengali Kosha Mangsho or Mutton Kasha is a delicious spicy Bengali Mutton Curry which is full of flavours from mutton, spices and mustard oil', 18, 'High', 'Bengali', 'Main Cours'),
+(308, 'Tawa prawns', 'prawns fried on tawa', 10, 'medium', 'Goan', 'Starter'),
+(309, 'Aloo Tukk chaat', 'potatoes boiled and mixed with herbs ', 5.99, 'low', 'Indian', 'Starter'),
+(310, 'Tandoori Roti', 'Tandoori Roti is made of both wheat flour and maida or just wheat flour', 4.25, 'Low', 'North Indi', 'Main Cours'),
+(311, 'Garlic Naan', 'garlic naan are made with a simple dough enriched with yogurt and homemade garlic butter and cooked in a blazing hot cast iron', 5, 'Low', 'North Indi', 'Main Cours'),
+(312, 'Chicken Biryani', 'Long-grained rice (like basmati) flavored with exotic spices, such as saffron, is layered with chicken and a thick gravy', 17.5, 'High', 'Hyderabadi', 'Main Cours'),
+(313, 'Mutton Biryani', 'Long-grained rice (like basmati) flavored with exotic spices, such as saffron, is layered with lamb and a thick gravy', 18.5, 'High', 'Hyderabadi', 'Main Cours'),
+(314, 'Chicken 65', 'chicken deep fried and sauteed with spicy indian herbs', 9.99, 'high', 'South Indi', 'Starter'),
+(315, 'Hara bhara kabab', 'vegetable patty spiced with herbs and light fried', 8.99, 'medium', 'North Indi', 'Starter'),
+(316, 'Jeera Rice', 'Rice saute in fried cumin', 9.5, 'Low', 'North Indi', 'Main Cours'),
+(317, 'Puri Sabzi', 'deep-fried rounds of flour and aloo (potato) bhaji, a spiced potato dish which may be dry or curried', 9.5, 'Medium', 'North Indi', 'Main Cours'),
+(318, 'Masala Dosa', 'A dosa is South Indian, fermented crepe made from rice batter and black lentils. Masala Dosa, specifically, is when you stuff it with a lightly cooked', 12.25, 'High', 'South Indi', 'Main Cours'),
+(319, 'Rogani Pomfret', 'pomfret fish covered and fried with indian marinated herbs ', 10.99, 'medium', 'seafood', 'Starter'),
+(320, 'Onion bhajiya', 'onion pieces covered with flour and deep fried', 7.99, 'low', 'North Indi', 'Starter'),
+(321, 'Chicken Cheeseballs', 'chicken marinated and rolled with cheese and deep fried', 9.99, 'low', 'indian', 'Starter'),
+(322, 'Delicy Roshogolla', 'made from ball-shaped dumplings of chhena (an Indian cottage cheese) and semolina dough, cooked in light syrup made of sugar', 12, 'Very Sweet', 'Bengali', 'Dessert'),
+(323, 'Panna Cotta', ' Italian dessert of sweetened cream thickened with gelatin and molded.', 15, 'Sweet', 'Italian', 'Dessert'),
+(324, 'Tea', 'Plain tea', 5.99, 'None', 'Indian', 'Beverage'),
+(325, 'Rasmalai', 'soft paneer balls immersed in chilled creamy milk', 14.5, 'Very Sweet', 'Bengali', 'Dessert'),
+(326, 'Kheer', 'Made by boiling with milk and sugar one of the following: rice, broken wheat, tapioca, vermicelli, sweet corn, etc. It is flavoured with cardamom, rai', 13.5, 'Sweet', 'North Indi', 'Dessert'),
+(327, 'Reviving Rabdi', 'Sweet, condensed-milk-based dish, originating from the Indian subcontinent, made by boiling the milk on low heat for a long time until it becomes dens', 14.5, 'Very Sweet', 'Indian', 'Dessert'),
+(328, 'Gulab Jamun', 'Made up of milk, a pinch of all-purpose flour (optional), baking powder and clarified butter (ghee); kneaded to form a dough, moulded into balls, deep', 13.5, 'Very Sweet', 'Indian', 'Dessert');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Food_order`
+--
+
+CREATE TABLE IF NOT EXISTS `Food_order` (
+  `O_id` int(10) NOT NULL AUTO_INCREMENT,
+  `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `Quantity` int(5) NOT NULL,
+  `Total_amount` int(9) NOT NULL,
+  `Cust_id` int(15) NOT NULL,
+  PRIMARY KEY (`O_id`),
+  KEY `Cust_id` (`Cust_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=165 ;
+
+--
+-- Dumping data for table `Food_order`
+--
+
+INSERT INTO `Food_order` (`O_id`, `Date`, `Quantity`, `Total_amount`, `Cust_id`) VALUES
+(1, '2019-03-26 15:17:26', 2, 150, 10011),
+(2, '2019-03-25 22:15:18', 2, 100, 10018),
+(9, '2019-03-26 17:48:50', 1, 50, 10017),
+(10, '2019-04-16 21:46:41', 5, 5252, 10011),
+(130, '2019-04-19 17:42:52', 5, 5252, 10011),
+(131, '2019-04-19 19:28:02', 5, 5252, 10011),
+(132, '2019-04-19 19:28:14', 5, 5252, 10011),
+(133, '2019-04-19 19:31:57', 5, 5252, 10011),
+(134, '2019-04-19 19:32:08', 5, 5252, 10011),
+(135, '2019-04-19 21:50:08', 5, 5252, 10011),
+(136, '2019-04-19 21:51:10', 5, 5252, 10011),
+(137, '2019-04-19 22:12:08', 5, 5252, 10011),
+(138, '2019-04-19 22:12:51', 5, 5252, 10011),
+(139, '2019-04-19 22:13:16', 5, 5252, 10011),
+(140, '2019-04-19 22:13:32', 5, 5252, 10011),
+(141, '2019-04-19 22:14:18', 5, 5252, 10011),
+(142, '2019-04-19 22:14:59', 5, 5252, 10011),
+(143, '2019-04-19 22:39:03', 5, 5252, 10011),
+(144, '2019-04-19 22:39:16', 5, 5252, 10011),
+(145, '2019-04-19 22:40:32', 5, 5252, 10011),
+(146, '2019-04-19 22:41:34', 5, 5252, 10011),
+(147, '2019-04-19 22:42:37', 5, 5252, 10011),
+(148, '2019-04-19 22:43:32', 5, 5252, 10011),
+(149, '2019-04-19 22:44:23', 5, 5252, 10011),
+(150, '2019-04-19 22:45:24', 5, 5252, 10011),
+(151, '2019-04-19 22:45:53', 5, 5252, 10011),
+(152, '2019-04-19 22:46:12', 5, 5252, 10011),
+(153, '2019-04-19 23:30:49', 5, 5252, 10011),
+(154, '2019-04-19 23:33:10', 5, 5252, 10011),
+(155, '2019-04-19 23:34:44', 5, 5252, 10011),
+(156, '2019-04-19 23:35:32', 5, 5252, 10011),
+(157, '2019-04-19 23:36:43', 5, 5252, 10011),
+(158, '2019-04-19 23:37:24', 5, 5252, 10011),
+(159, '2019-04-19 23:48:05', 5, 5252, 10011),
+(160, '2019-04-20 03:40:54', 5, 5252, 10011),
+(161, '2019-04-20 03:45:16', 5, 5252, 10011),
+(162, '2019-04-20 03:50:34', 5, 5252, 10011),
+(163, '2019-04-20 03:50:59', 5, 5252, 10011),
+(164, '2019-04-20 03:51:27', 5, 5252, 10011);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `F_item`
+--
+
+CREATE TABLE IF NOT EXISTS `F_item` (
+  `O_id` int(10) NOT NULL,
+  `Item_ID` int(5) NOT NULL,
+  KEY `O_id` (`O_id`),
+  KEY `Item_ID` (`Item_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `F_item`
+--
+
+INSERT INTO `F_item` (`O_id`, `Item_ID`) VALUES
+(9, 7),
+(130, 29),
+(131, 32),
+(132, 36),
+(133, 37),
+(133, 38),
+(133, 39),
+(133, 39),
+(134, 40),
+(134, 41),
+(134, 42),
+(134, 42),
+(135, 43),
+(135, 44),
+(135, 45),
+(136, 46),
+(136, 47),
+(136, 48),
+(136, 49),
+(137, 50),
+(137, 51),
+(137, 52),
+(137, 53),
+(138, 54),
+(138, 55),
+(138, 56),
+(138, 57),
+(139, 58),
+(139, 59),
+(139, 60),
+(139, 61),
+(140, 62),
+(140, 63),
+(140, 64),
+(140, 65),
+(141, 66),
+(141, 67),
+(141, 68),
+(141, 69),
+(142, 70),
+(142, 71),
+(142, 72),
+(142, 73),
+(143, 74),
+(143, 75),
+(143, 76),
+(143, 77),
+(144, 78),
+(144, 79),
+(144, 80),
+(144, 81),
+(145, 82),
+(145, 83),
+(145, 84),
+(145, 85),
+(146, 86),
+(146, 87),
+(146, 88),
+(146, 89),
+(147, 90),
+(147, 91),
+(147, 92),
+(147, 93),
+(148, 94),
+(148, 95),
+(148, 96),
+(148, 97),
+(149, 98),
+(149, 99),
+(149, 100),
+(149, 101),
+(150, 102),
+(150, 103),
+(150, 104),
+(150, 105),
+(151, 106),
+(151, 107),
+(151, 108),
+(151, 109),
+(152, 110),
+(152, 111),
+(152, 112),
+(152, 113),
+(153, 114),
+(153, 115),
+(153, 116),
+(153, 117),
+(154, 118),
+(154, 119),
+(154, 120),
+(154, 121),
+(155, 122),
+(155, 123),
+(155, 124),
+(155, 125),
+(156, 126),
+(156, 127),
+(156, 128),
+(156, 129),
+(157, 130),
+(157, 131),
+(157, 132),
+(157, 133),
+(158, 134),
+(158, 135),
+(158, 136),
+(158, 137),
+(159, 138),
+(159, 139),
+(159, 140),
+(159, 141),
+(160, 142),
+(160, 143),
+(160, 144),
+(160, 145),
+(161, 146),
+(161, 147),
+(161, 148),
+(161, 149),
+(162, 150),
+(162, 151),
+(162, 152),
+(162, 153),
+(163, 154),
+(163, 155),
+(163, 156),
+(163, 157),
+(164, 158),
+(164, 159),
+(164, 160),
+(164, 161);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Item`
+--
+
+CREATE TABLE IF NOT EXISTS `Item` (
+  `Item_ID` int(5) NOT NULL AUTO_INCREMENT,
+  `Item_qty` int(5) NOT NULL,
+  `F_id` int(5) NOT NULL,
+  PRIMARY KEY (`Item_ID`),
+  KEY `F_id` (`F_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=162 ;
+
+--
+-- Dumping data for table `Item`
+--
+
+INSERT INTO `Item` (`Item_ID`, `Item_qty`, `F_id`) VALUES
+(7, 8, 132),
+(8, 3, 311),
+(9, 1, 300),
+(29, 10, 328),
+(30, 10, 328),
+(31, 10, 328),
+(32, 10, 328),
+(33, 4, 328),
+(34, 3, 323),
+(35, 2, 326),
+(36, 2, 326),
+(37, 4, 328),
+(38, 3, 323),
+(39, 2, 326),
+(40, 3, 328),
+(41, 2, 323),
+(42, 1, 326),
+(43, 3, 328),
+(44, 2, 323),
+(45, 1, 326),
+(46, 2, 328),
+(47, 3, 323),
+(48, 1, 326),
+(49, 1, 215),
+(50, 2, 328),
+(51, 3, 323),
+(52, 1, 326),
+(53, 1, 215),
+(54, 2, 328),
+(55, 3, 323),
+(56, 1, 326),
+(57, 1, 215),
+(58, 2, 328),
+(59, 3, 323),
+(60, 1, 326),
+(61, 1, 215),
+(62, 2, 328),
+(63, 3, 323),
+(64, 1, 326),
+(65, 1, 215),
+(66, 2, 328),
+(67, 3, 323),
+(68, 1, 326),
+(69, 1, 215),
+(70, 2, 328),
+(71, 3, 323),
+(72, 1, 326),
+(73, 1, 215),
+(74, 2, 328),
+(75, 3, 323),
+(76, 1, 326),
+(77, 1, 215),
+(78, 2, 328),
+(79, 3, 323),
+(80, 1, 326),
+(81, 1, 215),
+(82, 2, 328),
+(83, 3, 323),
+(84, 1, 326),
+(85, 1, 215),
+(86, 2, 328),
+(87, 3, 323),
+(88, 1, 326),
+(89, 1, 215),
+(90, 2, 328),
+(91, 3, 323),
+(92, 1, 326),
+(93, 1, 215),
+(94, 2, 328),
+(95, 3, 323),
+(96, 1, 326),
+(97, 1, 215),
+(98, 2, 328),
+(99, 3, 323),
+(100, 1, 326),
+(101, 1, 215),
+(102, 2, 328),
+(103, 3, 323),
+(104, 1, 326),
+(105, 1, 215),
+(106, 2, 328),
+(107, 3, 323),
+(108, 1, 326),
+(109, 1, 215),
+(110, 2, 328),
+(111, 3, 323),
+(112, 1, 326),
+(113, 1, 215),
+(114, 2, 328),
+(115, 3, 323),
+(116, 1, 326),
+(117, 1, 215),
+(118, 2, 328),
+(119, 3, 323),
+(120, 1, 326),
+(121, 1, 215),
+(122, 2, 328),
+(123, 3, 323),
+(124, 1, 326),
+(125, 1, 215),
+(126, 2, 328),
+(127, 3, 323),
+(128, 1, 326),
+(129, 1, 215),
+(130, 2, 328),
+(131, 3, 323),
+(132, 1, 326),
+(133, 1, 215),
+(134, 2, 328),
+(135, 3, 323),
+(136, 1, 326),
+(137, 1, 215),
+(138, 2, 328),
+(139, 3, 323),
+(140, 1, 326),
+(141, 1, 215),
+(142, 2, 328),
+(143, 3, 323),
+(144, 1, 326),
+(145, 1, 215),
+(146, 2, 328),
+(147, 3, 323),
+(148, 1, 326),
+(149, 1, 215),
+(150, 2, 328),
+(151, 3, 323),
+(152, 1, 326),
+(153, 1, 215),
+(154, 2, 328),
+(155, 3, 323),
+(156, 1, 326),
+(157, 1, 215),
+(158, 2, 328),
+(159, 3, 323),
+(160, 1, 326),
+(161, 1, 215);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `OrderHandledBy`
+--
+
+CREATE TABLE IF NOT EXISTS `OrderHandledBy` (
+  `Emp_id` int(10) NOT NULL,
+  `O_id` int(10) NOT NULL,
+  KEY `Emp_id` (`Emp_id`),
+  KEY `O_id` (`O_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `OrderHandledBy`
+--
+
+INSERT INTO `OrderHandledBy` (`Emp_id`, `O_id`) VALUES
+(100004, 1),
+(100002, 2),
+(100002, 9);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reservation`
+--
+
+CREATE TABLE IF NOT EXISTS `reservation` (
+  `Full Name` varchar(50) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `Date` date NOT NULL,
+  `Time` time NOT NULL,
+  `No. of people` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `reservation`
+--
+
+INSERT INTO `reservation` (`Full Name`, `Email`, `Date`, `Time`, `No. of people`) VALUES
+('Omkar Bhat', 'odb6pz@virginia.edu', '0000-00-00', '00:00:11', 123),
+('', '', '0000-00-00', '12:30:00', 0),
+('', '', '0000-00-00', '00:00:00', 0);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `Bill`
+--
+ALTER TABLE `Bill`
+  ADD CONSTRAINT `Bill_ibfk_1` FOREIGN KEY (`O_id`) REFERENCES `Food_order` (`O_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `Food_order`
+--
+ALTER TABLE `Food_order`
+  ADD CONSTRAINT `Food_order_ibfk_1` FOREIGN KEY (`Cust_id`) REFERENCES `Customer` (`Cust_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `F_item`
+--
+ALTER TABLE `F_item`
+  ADD CONSTRAINT `F_item_ibfk_1` FOREIGN KEY (`O_id`) REFERENCES `Food_order` (`O_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `F_item_ibfk_2` FOREIGN KEY (`Item_ID`) REFERENCES `Item` (`Item_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `Item`
+--
+ALTER TABLE `Item`
+  ADD CONSTRAINT `Item_ibfk_1` FOREIGN KEY (`F_id`) REFERENCES `Food` (`F_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `OrderHandledBy`
+--
+ALTER TABLE `OrderHandledBy`
+  ADD CONSTRAINT `OrderHandledBy_ibfk_1` FOREIGN KEY (`Emp_id`) REFERENCES `Employee` (`Emp_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `OrderHandledBy_ibfk_2` FOREIGN KEY (`O_id`) REFERENCES `Food_order` (`O_id`) ON DELETE CASCADE ON UPDATE CASCADE;
