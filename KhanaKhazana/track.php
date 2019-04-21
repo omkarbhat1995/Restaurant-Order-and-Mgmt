@@ -18,7 +18,22 @@
 		$result1=$stmt1->execute();
 		$row1=$stmt1->fetch();
 		$id=$row1['O_id'];
-		$bilcrt="INSERT INTO Bill (`Bill_ID`,`Bill_date`,`O_id`) VALUES(NULL,CURRENT_TIMESTAMP,'$id')";
+		
+		$empidftch="SELECT Emp_id FROM OrderHandledBy WHERE O_id=:id";
+		$queryparams1= array (':id'=>$id);
+		$stmt1=$db->prepare($empidftch);
+		$result=$stmt1->execute($queryparams1);
+		$row1=$stmt1->fetch();
+		$empid=$row1['Emp_id'];
+		
+		$empfech="SELECT Emp_Name,Type From EMPLOYEE WHERE Emp_id=:emp";
+		$queryparams2= array (':emp'=>$empid);
+		$stmt2=$db->prepare($empfech);
+		$res=$stmt1->execute($queryparams2);
+		$row2=$stmt2->fetch();
+		$type=$row2['Type'];
+		$name=$row2['Emp_Name'];
+		
 		if (!mysqli_query($link,$bilcrt)){die('Error'.mysqli_error($link));}
 					##$url="order.php?username=".$u;
 					#header("Location: ".$url); 
@@ -84,7 +99,7 @@ input[type=number] {
 			</div>
 		</div>
 
-		<div>
+		<div class="creditCardForm">
 		<h3>Order Status:</h3>
 		</div>
 
