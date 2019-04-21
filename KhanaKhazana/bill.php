@@ -7,6 +7,8 @@
 			define ('DB_Host','mysql.cs.virginia.edu');
 			$link= mysqli_connect(DB_Host,DB_User,DB_Pass,DB_Name);
 			$u=$_GET['username'];
+			echo($u);
+			$u1=$u;
 			        $query = " SELECT Cust_id FROM Customer WHERE Email_id = :username"; 
         $query_params = array( ':username' => $u);      
 		$stmt=$db->prepare($query);
@@ -20,8 +22,9 @@
 		$id=$row1['O_id'];
 		$bilcrt="INSERT INTO Bill (`Bill_ID`,`Bill_date`,`O_id`) VALUES(NULL,CURRENT_TIMESTAMP,'$id')";
 		if (!mysqli_query($link,$bilcrt)){die('Error'.mysqli_error($link));}
-					$url="order.php?username=".$u;
-					header("Location: ".$url); 
+		$url="bill.php?username=".$u;
+		echo($u1);
+		header("Location: ".$url); 
 ?> 
 <html>
 <style> 
