@@ -20,8 +20,8 @@
 		$id=$row1['O_id'];
 		$bilcrt="INSERT INTO Bill (`Bill_ID`,`Bill_date`,`O_id`) VALUES(NULL,CURRENT_TIMESTAMP,'$id')";
 		if (!mysqli_query($link,$bilcrt)){die('Error'.mysqli_error($link));}
-					$url="order.php?username=".$u;
-					header("Location: ".$url); 
+					##$url="order.php?username=".$u;
+					#header("Location: ".$url); 
 ?> 
 <html>
 <style> 
@@ -84,62 +84,9 @@ input[type=number] {
 			</div>
 		</div>
 
-			<div class="creditCardForm">
-            <div class="heading">
-                <h1>Confirm Order</h1>
-            </div>
-            <div class="payment">
-                <form>
-                    <div class="form-group owner">
-                        <label for="owner">Owner</label>
-                        <input type="text" class="form-control" id="owner">
-                    </div>
-                    <div class="form-group CVV">
-                        <label for="cvv">CVV</label>
-                        <input type="tel" class="form-control" id="cvv" maxlength="3">
-                    </div>
-                    <div class="form-group" id="card-number-field">
-                        <label for="cardNumber">Card Number</label>
-                        <input type="tel" class="form-control" id="cardNumber" maxlength="16">
-                    </div>
-                    <div class="form-group" id="expiration-date">
-                        <label>Expiration Date</label>
-                        <select>
-                            <option value="01">January</option>
-                            <option value="02">February </option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
-                        <select>
-                            <option value="19"> 2019</option>
-                            <option value="20"> 2020</option>
-                            <option value="21"> 2021</option>
-                            <option value="22"> 2022</option>
-                            <option value="23"> 2023</option>
-                            <option value="24"> 2024</option>
-                        </select>
-                    </div>
-                    <div class="form-group" id="credit_cards">
-                        <img src="img/visa.jpg" id="visa">
-                        <img src="img/mastercard.jpg" id="mastercard">
-                        <img src="img/amex.jpg" id="amex">
-                    </div>
-                    <div class="form-group" id="pay-now">
-                        <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-		
-		
+		<div>
+		<h3>Order Status:</h3>
+		</div>
 
 		<div class="col-md-12 footer">
     		<div class="row">
