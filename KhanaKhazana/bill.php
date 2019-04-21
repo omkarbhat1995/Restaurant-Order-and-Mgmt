@@ -1,13 +1,15 @@
 <?php 
     require("common.php"); 
-			
+			if (isset($_POST['Con'])){
+			$sett=$_POST['Con'];}
 			define ('DB_Name','og7ut_khana_khazana');
 			define ('DB_User','og7ut');
 			define ('DB_Pass','bXnQZS1k');
 			define ('DB_Host','mysql.cs.virginia.edu');
 			$link= mysqli_connect(DB_Host,DB_User,DB_Pass,DB_Name);
-			$u=$_GET['username'];
-			echo($u);
+			if (isset($_GET['username']))
+			{			$u=$_GET['username'];}
+			#echo($u);
 			$u1=$u;
 			        $query = " SELECT Cust_id FROM Customer WHERE Email_id = :username"; 
         $query_params = array( ':username' => $u);      
@@ -22,9 +24,16 @@
 		$id=$row1['O_id'];
 		$bilcrt="INSERT INTO Bill (`Bill_ID`,`Bill_date`,`O_id`) VALUES(NULL,CURRENT_TIMESTAMP,'$id')";
 		if (!mysqli_query($link,$bilcrt)){die('Error'.mysqli_error($link));}
-		$url="bill.php?username=".$u;
-		echo($u1);
-		header("Location: ".$url); 
+
+		if ($sett=='Confirm'){
+		$url="track.php?username=".$u;
+		header("Location: ".$url);}
+		// function heder(){
+		// $url="track.php?username=".$u;
+		// header("Location: ".$url);
+		// echo("U have been Hacked ! ! ! ");#}}
+		// }
+		
 ?> 
 <html>
 <style> 
@@ -92,7 +101,7 @@ input[type=number] {
                 <h1>Confirm Order</h1>
             </div>
             <div class="payment">
-                <form>
+                <form method="post">
                     <div class="form-group owner">
                         <label for="owner">Owner</label>
                         <input type="text" class="form-control" id="owner">
@@ -136,7 +145,7 @@ input[type=number] {
                         <img src="img/amex.jpg" id="amex">
                     </div>
                     <div class="form-group" id="pay-now">
-                        <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
+                        <input type="submit" class="btn btn-default"  name="Con" value="Confirm">
                     </div>
                 </form>
             </div>
