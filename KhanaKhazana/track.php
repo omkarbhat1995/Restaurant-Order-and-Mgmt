@@ -21,22 +21,22 @@
 		
 		$empidftch="SELECT Emp_id FROM OrderHandledBy WHERE O_id=:id";
 		$queryparams1= array (':id'=>$id);
-		$stmt1=$db->prepare($empidftch);
-		$result=$stmt1->execute($queryparams1);
-		$row1=$stmt1->fetch();
-		$empid=$row1['Emp_id'];
+		$stmt3=$db->prepare($empidftch);
+		$result2=$stmt3->execute($queryparams1);
+		$row3=$stmt3->fetch();
+		$empid=$row3['Emp_id'];
 		
-		$empfech="SELECT Emp_Name,Type From EMPLOYEE WHERE Emp_id=:emp";
+		$empfech="SELECT Emp_Name,Type From Employee WHERE Emp_id=:emp";
 		$queryparams2= array (':emp'=>$empid);
 		$stmt2=$db->prepare($empfech);
-		$res=$stmt1->execute($queryparams2);
+		$res=$stmt2->execute($queryparams2);
 		$row2=$stmt2->fetch();
 		$type=$row2['Type'];
 		$name=$row2['Emp_Name'];
-		
-		if (!mysqli_query($link,$bilcrt)){die('Error'.mysqli_error($link));}
-					##$url="order.php?username=".$u;
-					#header("Location: ".$url); 
+		if($type=='Cashier'){$type1=" Final Stages will be handed over for Delivery.";}
+		if($type=='Chef'){$type1=" Food is being prepared.";}
+		if($type=='Waiter'){$type1=" Order has been recieved and is being processed.";}
+		if($type=='Delivery Guy'){$type1=" Food is being delivered ! Be ready to be wowed by the awesomeness.";}
 ?> 
 <html>
 <style> 
@@ -61,10 +61,6 @@ input[type=number] {
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/demo.css">
-	
-	
-	
-	
 </head>
 <body>
 	<div class="container-fluid">
@@ -97,12 +93,11 @@ input[type=number] {
 					<img src="img/menu-background1.jpg" alt="img" class="img-fluid" style="width: 100%; min-height: 100%;">
 				</div>
 			</div>
-		</div>
+		</div><br/><br/>
 
 		<div class="creditCardForm">
-		<h3>Order Status:</h3>
+		<h3 align="center"><br/>Order Status:<?php echo("Order is with ");echo($name);echo(".");?><br/><br/><?php echo($type1);?></h3>
 		</div>
-
 		<div class="col-md-12 footer">
     		<div class="row">
     			<div class="col-md-6 mx-auto text-center upper-part">
@@ -123,10 +118,6 @@ input[type=number] {
     		</div>
     		<div class="row">
     			<hr class="hr10">
-				
-				
-				
-				
     		</div>
     		<div class="row">
     			<div class="col-md-4 text-center copyright">
@@ -143,8 +134,7 @@ input[type=number] {
     			</div>
     		</div>
     	</div>
-	</div>
-							
+	</div>				
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="js/wow.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
@@ -159,7 +149,6 @@ input[type=number] {
 				$('nav').removeClass('black');
 			}
 		})
-		
 	</script>
 </body>
 </html>
