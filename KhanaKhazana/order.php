@@ -22,13 +22,15 @@
             $result = $stmt->execute($query_params); 
 	        $row = $stmt->fetch(); 
 			$cid=$row['Cust_id'];
-			$fo_crt="INSERT INTO Food_order(`O_id`,`Date`,`Quantity`,`Total_amount`,`Cust_id`) VALUES (NULL,CURRENT_TIMESTAMP,'0','0','$cid')";
+			$fo_crt="INSERT INTO Food_order(`O_id`,`Date`,`Quantity`,`Total_amount`,`Cust_id`,`Complete_status`) VALUES (NULL,CURRENT_TIMESTAMP,'0','0','$cid','N')";
 			$foid="SELECT max(O_id) FROM Food_order";
 			if (!mysqli_query($link,$fo_crt)){die('Error'.mysqli_error($link));}
 			$stmt1= $db->prepare($foid);
 			$result1=$stmt1->execute();
 			$row1=$stmt1->fetch();
 			$id=$row1['max(O_id)'];
+			$orhan=""INSERT INTO OrderHandledBy(`Emp_id`,`O_id`) VALUES ('100004','$id')";";
+			if (!mysqli_query($link,$orhan)){die('Error'.mysqli_error($link));}
 				if (isset($des3q)){
 				if($des3q>0){$set=328;
 					$it="INSERT INTO Item(`Item_ID`,`Item_qty`,`F_id`) VALUES (NULL,'$des3q',328)";if (!mysqli_query($link,$it)){die('Error'.mysqli_error($link));}
