@@ -177,8 +177,8 @@ input[type=number] {
 		<?php for ($i=0;$i<$w4i;$i+=1) {echo("<option value={$w4[$i]}>{$w4[$i]}</option>");}?>
 		</select>
 		<input type="submit" value="Delivered" name="DDD" ></input></form><br/><br/> Last 10 Orders:
-		<table border cellpadding : 10px>
-		<?php #echo("<tr>");
+		<table border align="center" width="15%">
+		<?php 
 		for ($i=0;$i<10;$i++){$j=$i+1;echo("<tr><td>$j</td><td>$w5[$i]</td></tr>");}
 	#	echo("</tr>");
 		?>
