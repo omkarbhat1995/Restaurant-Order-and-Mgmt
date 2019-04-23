@@ -115,13 +115,7 @@ if (a==="Cn"){
 			 		</div>
 			 		<div class="col-md-3 mx-auto text-center box3 wow animated fadeInUp" style="animation-delay: 0.6s;">
 			 			<i class="fas fa-clock"></i>
-			 			<h2>Delete</h2>
-			 			<p><select name="delete">
-									<option value="">Select One</option>
-									<option value="Ad">Address</option>
-									<option value="Cn">Contact Number</option>
-									<option value="Al">Whole Account</option>
-									</select></p>
+			 			<h2><a href="ordermgmt.php">Order Management</a></h2>
 	    				<p></p>
 	    				<p></p>
 			 		</div>
