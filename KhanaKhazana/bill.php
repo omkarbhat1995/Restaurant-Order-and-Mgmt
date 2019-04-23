@@ -22,10 +22,11 @@
 		$result1=$stmt1->execute();
 		$row1=$stmt1->fetch();
 		$id=$row1['O_id'];
+		if ($sett=='Confirm'){
+
 		$bilcrt="INSERT INTO Bill (`Bill_ID`,`Bill_date`,`O_id`) VALUES(NULL,CURRENT_TIMESTAMP,'$id')";
 		if (!mysqli_query($link,$bilcrt)){die('Error'.mysqli_error($link));}
 
-		if ($sett=='Confirm'){
 		$url="track.php?username=".$u;
 		header("Location: ".$url);}
 		// function heder(){
