@@ -53,6 +53,9 @@
 						<div class="row">
 										<div class="col-md-7 wow animated fadeInRight img-part">
 					<img src="img/tomato-soup.jpg" alt="img" class="img-fluid" style="width: 100%; min-height: 100%;">
+					</div><div class="col-md-7 wow animated fadeInRight img-part">
+					<img src="img/mushroom-soup.jpg" alt="img" class="img-fluid" style="width: 100%; min-height: 100%;">
+
 				</div>
 							
 						</div>
@@ -62,9 +65,9 @@
 						<hr class="hr3">
 						<div class="row">
 										<div class="col-md-7 wow animated fadeInRight img-part">
-					<img src="img/tomato-soup.jpg" alt="img" class="img-fluid" style="width: 100%; min-height: 100%;">
+					<img src="img/waldorf-salad.jpg" alt="img" class="img-fluid" style="width: 100%; min-height: 100%;">
 				</div>			<div class="col-md-7 wow animated fadeInRight img-part">
-					<img src="img/tomato-soup.jpg" alt="img" class="img-fluid" style="width: 100%; min-height: 100%;">
+					<img src="img/Cracking cobb salad.jpg" alt="img" class="img-fluid" style="width: 100%; min-height: 100%;">
 				</div>
 						</div>
 					</div>
@@ -79,8 +82,11 @@
 				</div>
 
 				<div class="row">
-								<div class="col-md-7 wow animated fadeInRight img-part">
-					<img src="img/tomato-soup.jpg" alt="img" class="img-fluid" style="width: 100%; min-height: 100%;">
+				<div class="col-md-7 wow animated fadeInRight img-part">
+					<img src="img/Chicken 65.jpg" alt="img" class="img-fluid" style="width: 50%; min-height: 100%;">
+				</div>
+				<div class="col-md-7 wow animated fadeInRight img-part">
+					<img src="img/chicken biryani.jpg" alt="img" class="img-fluid" style="width: 50%; min-height: 100%;">
 				</div>
 				</div>
 			</div>
@@ -94,7 +100,7 @@
 				</div>
 				<div class="row">
 									<div class="col-md-7 wow animated fadeInRight img-part">
-					<img src="img/tomato-soup.jpg" alt="img" class="img-fluid" style="width: 100%; min-height: 100%;">
+					<img src="img/gulab jamun.jpg" alt="img" class="img-fluid" style="width: 50%; min-height: 100%;">
 				</div>
 				</div>
 			</div>
@@ -123,9 +129,6 @@
     				<a href="#"><i class="fab fa-youtube"></i></a>
     				<a href="#"><i class="fab fa-twitter"></i></a>
     			</div>
-    		</div>
-    		<div class="row">
-    			<hr class="hr10">
     		</div>
     		<div class="row">
     			<div class="col-md-4 text-center copyright">
