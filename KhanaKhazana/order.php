@@ -29,7 +29,7 @@
 			$result1=$stmt1->execute();
 			$row1=$stmt1->fetch();
 			$id=$row1['max(O_id)'];
-			$orhan=""INSERT INTO OrderHandledBy(`Emp_id`,`O_id`) VALUES ('100004','$id')";";
+			$orhan="INSERT INTO OrderHandledBy(`Emp_id`,`O_id`) VALUES ('100001','$id');";
 			if (!mysqli_query($link,$orhan)){die('Error'.mysqli_error($link));}
 				if (isset($des3q)){
 				if($des3q>0){$set=328;
@@ -193,9 +193,10 @@
 					$fo_up="UPDATE `Food_order` SET `Quantity`=$quant, `Total_amount`=$tot WHERE `O_id`=$id";if (!mysqli_query($link,$fo_up)){die('Error'.mysqli_error($link));}
 					$fooditem="INSERT INTO F_item (`O_id`,`Item_ID`) VALUES ('$id','$itid')";if (!mysqli_query($link,$fooditem)){die('Error'.mysqli_error($link));}
 				}}
+					if(isset($sett)){
 					if($sett=='Order'){
-					$url="bill.php?username=".$u;
-				header("Location: ".$url);} 
+					$url="cart.php?username=".$u;
+					header("Location: ".$url);}} 
 ?> 
 
 <html>
@@ -458,6 +459,7 @@ input[type=number] {
 				</div>
 			</div>
 		</div>
+		
 		<div align="center">
 			<input type="submit" name="Ord" value="Order">
 		</div></form>
