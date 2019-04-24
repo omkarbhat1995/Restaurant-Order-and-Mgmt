@@ -25,7 +25,8 @@
 		$result2=$stmt3->execute($queryparams1);
 		$row3=$stmt3->fetch();
 		$empid=$row3['Emp_id'];
-		
+		if ($empid=""){$type1="Your Order has been delivered! Enjoy!";echo($type1);}
+		else{
 		$empfech="SELECT Emp_Name,Type From Employee WHERE Emp_id=:emp";
 		$queryparams2= array (':emp'=>$empid);
 		$stmt2=$db->prepare($empfech);
@@ -36,7 +37,7 @@
 		if($type=='Cashier'){$type1=" Final Stages will be handed over for Delivery.";}
 		if($type=='Chef'){$type1=" Food is being prepared.";}
 		if($type=='Waiter'){$type1=" Order has been recieved and is being processed.";}
-		if($type=='Delivery Guy'){$type1=" Food is being delivered ! Be ready to be wowed by the awesomeness.";}
+		if($type=='Delivery Guy'){$type1=" Food is being delivered ! Be ready to be wowed by the awesomeness.";}}
 ?> 
 <html>
 <style> 
@@ -96,7 +97,7 @@ input[type=number] {
 		</div><br/><br/>
 
 		<div class="creditCardForm">
-		<h3 align="center"><br/>Order Status:<?php echo("Order is with ");echo($name);echo(".");?><br/><br/><?php echo($type1);?></h3>
+		<h3 align="center"><br/>Order Status:<?php if ($empid!=""){echo("Order is with ");echo($name);echo(".");}?><br/><br/><?php if ($empid!=""){echo($type1);} else {echo("Your Order has been delivered! Enjoy!");}?></h3>
 		</div>
 		<div class="col-md-12 footer">
     		<div class="row">
