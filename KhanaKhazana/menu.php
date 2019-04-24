@@ -101,7 +101,7 @@
 									<h4>$ 12.70</h4>
 									<h3>Waldorf Salad</h3>
 									<p>
-										Grapes, lemon, olive oil, sea salt, black pepper, walnuts, yoghurt, celery
+										Grapes, lemon, olive oil, sea salt, black pepper, walnuts, yoghurt, celery	
 									</p>
 								</div>
 							</div>
@@ -120,65 +120,102 @@
 				<div class="row">
 					<div class="col-md-4 mx-auto box-1 wow animated fadeInUp">
 						<div class="box-1-text">
-							<h4>$ 20.50</h4>
-							<h3>Grilled Chicken Kababs</h3>
-							<p>
-								Skinless chicken breast, black pepper, red pepper, passata, ginger, garlic
-							</p>
+							<h4>$ 9.99</h4>
+							<h3>Chicken 65</h3>
+							<p>Chicken Deep Fried and Sauteed with Spicy Indian Herbs</p>
 						</div>
 					</div>
 					<div class="col-md-4 mx-auto box-2 wow animated fadeInUp" style="animation-delay: 0.3s;">
 						<div class="box-2-text">
-							<h4>$ 23.50</h4>
-							<h3>Barbaque Beef</h3>
-							<p>
-								Short ribs, olive oil, caraway seeds, yoghurt, carrots, onions, white cabbage
-							</p>
+							<h4>$ 18.50</h4>
+							<h3>Mutton Biryani	</h3>
+							<p>Long-grained rice (like basmati) flavored with exotic spices, such as saffron, is layered with lamb and a thick gravy	</p>
 						</div>
 					</div>
 					<div class="col-md-4 mx-auto box-3 wow animated fadeInUp" style="animation-delay: 0.6s;">
 						<div class="box-3-text">
-							<h4>$ 22.80</h4>
-							<h3>Southern Fried Chicken</h3>
-							<p>
-								Chicken thighs, chicken drumsticks, potatoes, ayenne pepper
-							</p>
+							<h4>$ 12.25</h4>
+							<h3>Rogani Pomfret</h3>
+							<p>Pomfret Fish Covered and Fried with Indian Marinated Herbs 	</p>
 						</div>
 					</div>
-					<div class="col-md-4 mx-auto box-3 wow animated fadeInUp">
-						<div class="box-3-text">
-							<h4>$ 24.20</h4>
-							<h3>Southern Fried Chicken</h3>
-							<p>
-								Chicken thighs, chicken drumsticks, potatoes, ayenne pepper
-							</p>
+					<div class="col-md-4 mx-auto box-4 wow animated fadeInUp">
+						<div class="box-4-text">
+							<h4>$ 14.50</h4>
+							<h3>Paneer Bhurji	</h3>
+							<p>crumbled paneer simmered in spicy tomato gravy		</p>
 						</div>
 					</div>
-					<div class="col-md-4 mx-auto box-1 wow animated fadeInUp" style="animation-delay: 0.3s;">
-						<div class="box-1-text">
-							<h4>$ 20.50</h4>
-							<h3>Grilled Chicken Kababs</h3>
-							<p>
-								Skinless chicken breast, black pepper, red pepper, passata, ginger, garlic
-							</p>
+					<div class="col-md-4 mx-auto box-5 wow animated fadeInUp" style="animation-delay: 0.3s;">
+						<div class="box-5-text">
+							<h4>$ 14.50</h4>
+							<h3>Murg Handi</h3>
+							<p>Chicken cooked in handi with whole garam masala</p>
 						</div>
 					</div>
-					<div class="col-md-4 mx-auto box-2 wow animated fadeInUp" style="animation-delay: 0.6s;">
-						<div class="box-2-text">
-							<h4>$ 70.00</h4>
-							<h3>Barbaque Beef</h3>
+					<div class="col-md-4 mx-auto box-6 wow animated fadeInUp" style="animation-delay: 0.6s;">
+						<div class="box-6-text">
+							<h4>$ 9.50</h4>
+							<h3>Puri Sabzi</h3>
+							<p>Deep-fried Rounds of flour and aloo (potato) bhaji, a spiced potato dish which may be dry or curried	</p>    
+						</div>
+					</div>
+					<div class="col-md-4 mx-auto box-7 wow animated fadeInUp" style="animation-delay: 0.6s;">
+						<div class="box-7-text">
+							<h4>$ 4.25</h4>
+							<h3>Tandoori Roti</h3>
+							<p>Tandoori Roti is made of both wheat flour and maida or just wheat flour</p>   
+						</div>
+					</div>
+					<div class="col-md-4 mx-auto box-8 wow animated fadeInUp" style="animation-delay: 0.6s;">
+						<div class="box-8-text">
+							<h4>$ 9.50</h4>
+							<h3>Jeera Rice</h3>
+							<p>Rice saute in fried cumin.</p>    						</div>
+					</div>
+					
+				</div>
+			</div>
+
+			<div class="col-md-9 mx-auto coffee-top wow animated fadeIn">
+				<img src="img/dessert-top.png" alt="img" class="img-fluid">
+			</div>
+			
+			<div class="coffees">
+				<div class="col-md-6 mx-auto">
+					<h3>Powerful</h3>
+					<h1>Coffee</h1>
+					<hr class="hr5">
+				</div>
+				<div class="row">
+					<div class="col-md-4 mx-auto coffee-1 wow animated fadeInUp">
+						<div class="coffee-1-text">
+							<h4>$ 5.89</h4>
+							<h3>Cappuccino</h3>
 							<p>
-								Short ribs, olive oil, caraway seeds, yoghurt, carrots, onions, white cabbage
-							</p>
+								Tangerine, vanilla sticks, milk, brown sugar, double cream
+							</p>  
+						</div>
+					</div>
+					<div class="col-md-4 mx-auto coffee-2 wow animated fadeInUp" style="animation-delay: 0.3s;">
+						<div class="coffee-2-text">
+							<h4>$ 11.50</h4>
+							<h3>Affogato</h3>
+							<p>A scoop of vanilla gelato drowned with a shot of hot espresso.</p>  
+						</div>
+					</div>
+					<div class="col-md-4 mx-auto coffee-3 wow animated fadeInUp" style="animation-delay: 0.6s;">
+						<div class="coffee-3-text">
+							<h4>$ 5.84</h4>
+							<h3>Coffee</h3>
+							<p>Plain Coffee</p> 
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="col-md-9 mx-auto dessert-top wow animated fadeIn">
-				<img src="img/dessert-top.png" alt="img" class="img-fluid">
-			</div>
-
+			
+			
 			<div class="desserts">
 				<div class="col-md-6 mx-auto">
 					<h3>Tasty</h3>
@@ -188,11 +225,9 @@
 				<div class="row">
 					<div class="col-md-4 mx-auto dessert-1 wow animated fadeInUp">
 						<div class="dessert-1-text">
-							<h4>$ 9.50</h4>
-							<h3>Tangerine and Vanilla Cup</h3>
-							<p>
-								Tangerine, vanilla sticks, milk, brown sugar, double cream
-							</p>
+							<h4>$ 13.50</h4>
+							<h3>Kheer</h3>
+							<p>Made by boiling with milk and sugar one of the following: rice, broken wheat, tapioca, vermicelli, sweet corn, etc.</p>
 						</div>
 					</div>
 					<div class="col-md-4 mx-auto dessert-2 wow animated fadeInUp" style="animation-delay: 0.3s;">
@@ -201,22 +236,22 @@
 							<h3>Panna Cotta</h3>
 							<p>
 								Milk, powdered gelatin, whipping cream, honey, sugar, salt, fresh berries
-							</p>
+							</p>								
 						</div>
 					</div>
 					<div class="col-md-4 mx-auto dessert-3 wow animated fadeInUp" style="animation-delay: 0.6s;">
 						<div class="dessert-3-text">
-							<h4>$ 12.00</h4>
+							<h4>$ 13.50</h4>
 							<h3>Delicy Rasgullah</h3>
 							<p>
 								Strawberry, golden syrup, brown sugar, cream cheese, cinnamon
-							</p>
+							</p>													
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
+		
 		<div class="col-md-11 mx-auto reservation">
     		<div class="row">
     			<div class="col-md-4 img-left wow animated fadeInLeft">
