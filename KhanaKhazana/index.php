@@ -249,7 +249,7 @@
     					<input type="text" name="date" placeholder="&#xf784; Date (yyyy-mm-dd)">
     					<input type="text" name="time" placeholder="&#xf017; Time (hh:mm)">
     					<input type="number" name="people" placeholder="&#xf183; No. of people">
-    					<button class="btn btn-danger">FIND A TABLE</button>
+    					<button class="btn btn-danger" name="tablew" value="a">FIND A TABLE</button>
     				</form>
     			</div>
     			<div class="col-md-4 img-right wow animated fadeInRight">
@@ -323,15 +323,21 @@
 	}
 	#$u=(string)$_POST['username'];
 	#$p=(string)hash('sha256',$_POST['password']);
-	$f=$_POST['name'];
-	$e=$_POST['email'];
-	$d=$_POST['date'];
-	$t=$_POST['time'];
-	$p=$_POST['people'];
+	if (isset($_POST['name'])){
+	$f=$_POST['name'];}
+	if (isset($_POST['email'])){
+	$e=$_POST['email'];}
+	if (isset($_POST['date'])){
+	$d=$_POST['date'];}
+	if (isset($_POST['time'])){
+	$t=$_POST['time'];}
+	if (isset($_POST['people'])){
+	$p=$_POST['people'];}
 	#echo($d);
+	if(isset($_POST['tablew'])){
 $sql2="INSERT INTO reservation (`Full Name`,`Email`,`Date`,`Time`,`No. of people`) VALUES ('$f','$e','$d','$t','$p')";
 if (!mysqli_query($link,$sql2)){die('Error'.mysqli_error($link));}
-
+	}
 #header("refresh:1;url=index.php");
 mysqli_close($link);
 ?>
