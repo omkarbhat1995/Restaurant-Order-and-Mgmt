@@ -25,8 +25,9 @@
 		$result2=$stmt3->execute($queryparams1);
 		$row3=$stmt3->fetch();
 		$empid=$row3['Emp_id'];
-		if ($empid=""){$type1="Your Order has been delivered! Enjoy!";echo($type1);}
-		else{
+		#echo($empid);
+		if ($empid==""){$type1="Your Order has been delivered! Enjoy!";echo($type1);}
+		if ($empid!=""){
 		$empfech="SELECT Emp_Name,Type From Employee WHERE Emp_id=:emp";
 		$queryparams2= array (':emp'=>$empid);
 		$stmt2=$db->prepare($empfech);
