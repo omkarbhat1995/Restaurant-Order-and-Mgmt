@@ -29,7 +29,7 @@
 			$result1=$stmt1->execute();
 			$row1=$stmt1->fetch();
 			$id=$row1['max(O_id)'];
-			$orhan="INSERT INTO OrderHandledBy(`Emp_id`,`O_id`) VALUES ('100001','$id');";
+			$orhan="INSERT INTO OrderHandledBy(`Emp_id`,`O_id`) VALUES ('100001','$id')";
 			if (!mysqli_query($link,$orhan)){die('Error'.mysqli_error($link));}
 				if (isset($des3q)){
 				if($des3q>0){$set=328;
